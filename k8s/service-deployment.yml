@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: appointment-service
+  name: appointment-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: appointment-service
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: appointment-service
+    spec:
+      containers:
+      - image: hisureshk/appointment-service
+        name: appointment-service
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: appointment-service
+  name: appointment-service
+spec:
+  selector:
+    app: appointment-service
+  ports:
+  - protocol: "TCP"
+    port: 8080
+    targetPort: 8080
+  type: NodePort

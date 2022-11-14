@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "9fcd96a1-b3cd-427a-9435-bdbe41ac6222",
+		"name": "SS_AppointmentService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1846004"
+	},
+	"item": [
+		{
+			"name": "Create Appointment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"appointmentType\": \"DIAGNOSTIC\",\n    \"appointmentDate\": \"2022-11-15\",\n    \"appointmentStartTime\": \"10:00:00\",\n    \"appointmentEndTime\": \"10:30:00\",\n    \"status\": \"Booked\",\n    \"price\": 1700\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/appointments/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"appointments",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Appointments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/appointments/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"appointments",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Appointment",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/appointments/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"appointments",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
